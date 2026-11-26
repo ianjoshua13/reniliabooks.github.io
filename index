@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Renilia Book - Sua biblioteca virtual. Descubra clássicos, acompanhe leituras, conecte-se com amigos e participe de clubes do livro.">
+    <title>Renilia Book - Biblioteca Virtual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header" role="banner">
+            <div class="container header-inner">
+                <a href="#" class="logo" data-view="home" aria-label="Renilia Book - Início">
+                    <span class="logo-icon" aria-hidden="true">📚</span>
+                    <span class="logo-text">Renilia Book</span>
+                </a>
+                <nav class="nav-main" id="navMain" role="navigation" aria-label="Navegação principal">
+                    <button class="nav-btn active" data-view="home" aria-current="page"><span class="nav-icon" aria-hidden="true">🏠</span><span>Início</span></button>
+                    <button class="nav-btn" data-view="library"><span class="nav-icon" aria-hidden="true">📖</span><span>Biblioteca</span></button>
+                    <button class="nav-btn" data-view="book-of-week"><span class="nav-icon" aria-hidden="true">⭐</span><span>Destaque da Semana</span></button>
+                    <button class="nav-btn" data-view="friends"><span class="nav-icon" aria-hidden="true">👥</span><span>Amigos</span></button>
+                    <button class="nav-btn" data-view="clubs"><span class="nav-icon" aria-hidden="true">🏛️</span><span>Clubes</span></button>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-ghost" id="searchToggle" aria-label="Buscar livros" aria-expanded="false"><span aria-hidden="true">🔍</span></button>
+                    <div class="user-menu" id="userMenu">
+                        <button class="btn btn-primary" id="loginBtn" data-view="auth"><span aria-hidden="true">👤</span><span>Entrar</span></button>
+                        <div class="dropdown hidden" id="userDropdown" role="menu">
+                            <button class="dropdown-item" data-view="profile" role="menuitem"><span aria-hidden="true">👤</span> Meu Perfil</button>
+                            <button class="dropdown-item" data-view="my-books" role="menuitem"><span aria-hidden="true">📚</span> Minha Estante</button>
+                            <button class="dropdown-item" id="logoutBtn" role="menuitem"><span aria-hidden="true">🚪</span> Sair</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMain"><span aria-hidden="true">☰</span></button>
+            </div>
+            <div class="search-bar hidden" id="searchBar" role="search">
+                <div class="container">
+                    <label for="searchInput" class="sr-only">Buscar livros</label>
+                    <input type="search" id="searchInput" placeholder="Buscar por título, autor ou gênero..." autocomplete="off">
+                    <div class="search-results" id="searchResults" role="listbox" aria-label="Resultados da busca"></div>
+                </div>
+            </div>
+        </header>
+        <main id="mainContent" role="main"></main>
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <p>&copy; 2025 Renilia Book. Um protótipo de biblioteca virtual feito com carinho.</p>
+                <p class="footer-note">Livros de domínio público via <a href="https://www.gutenberg.org" target="_blank" rel="noopener">Project Gutenberg</a></p>
+            </div>
+        </footer>
+    </div>
+    <div class="modal-overlay hidden" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle"></div>
+    <div class="mobile-menu-overlay hidden" id="mobileMenuOverlay">
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <span class="logo-text">Renilia Book</span>
+                <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Fechar menu"><span aria-hidden="true">✕</span></button>
+            </div>
+            <nav class="mobile-nav" id="mobileNav"></nav>
+        </div>
+    </div>
+    <div class="toast-container" id="toastContainer" role="region" aria-live="polite"></div>
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
